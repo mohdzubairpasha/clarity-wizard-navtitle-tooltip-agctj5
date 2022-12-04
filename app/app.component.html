@@ -1,0 +1,25 @@
+<button class="btn" (click)="wizard.open()">Open Wizard</button>
+
+<clr-wizard #wizard [(clrWizardOpen)]="_open">
+    <clr-wizard-title>Skipping Page Two</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Really long title should have tooltip in nav</ng-template>
+        <ng-template clrPageNavTitle>Really long title should have tooltip</ng-template>
+        <ng-template clrPageButtons>
+          <clr-wizard-button [type]="'custom-danger'">No</clr-wizard-button>
+          <clr-wizard-button [type]="'custom-next'">Yes</clr-wizard-button>
+        </ng-template>
+    </clr-wizard-page>
+
+    
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Title for page 2</ng-template>
+        <ng-template clrPageNavTitle>Title not that long Step 2</ng-template>
+    </clr-wizard-page>
+</clr-wizard>
